@@ -41,7 +41,7 @@ get_header();
 
                       <a class="pg-top">
 
-                        <img src="<?= get_template_directory_uri() ?>/img/app_buttons/android_hover.png" alt="">
+                        <img src="<?= get_template_directory_uri() ?>/img/nft-card-demo.jpg" alt="">
                         <div class="content">
                           <p class="title"><?php echo $row["title"]; ?></p>
                           <p class="desc"><?php echo $row["title"]; ?></p>
@@ -354,6 +354,10 @@ get_header();
 }
 
 .slider-container {}
+
+.slider-container .container {
+  max-width: calc(428px * 3);
+}
 
 .slider-container h3 {
 
@@ -770,7 +774,7 @@ get_header();
 .slider-container .owl-item {
   width: 380px;
   height: 531px;
-  margin: 20px;
+  /* margin: 20px; */
   box-sizing: border-box;
   overflow: hidden;
   background: #FFFFFF;
