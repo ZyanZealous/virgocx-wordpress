@@ -22,10 +22,17 @@ get_header();
         <button class="sell">Sell your NFT</button>
       </div>
     </div>
+
+    <img class="banner-image" src="<?= get_template_directory_uri() ?>/img/nft/Banner_Desktop.svg" alt="">
   </div>
 
   <div class="slider-container">
     <h3>Trending on VirgoCX</h3>
+
+    <div class="slider-bg">
+      <img class="top-image" src="<?= get_template_directory_uri() ?>/img/nft/star.svg" alt="">
+      <img class="bottom-image" src="<?= get_template_directory_uri() ?>/img/nft/bg_element.svg" alt="">
+    </div>
 
     <section class="carousel-area">
       <div class="container custom-container">
@@ -89,6 +96,9 @@ get_header();
       <div class="how-container">
         <div class="row custom-container">
           <div class="icon-box">
+
+            <img class="image" style="height: 348px"
+              src="<?= get_template_directory_uri() ?>/img/nft/How_it_works_buying_an_NFT.svg" alt="">
           </div>
           <div class="num-box">
             <p>1.</p>
@@ -109,6 +119,9 @@ get_header();
       <div class="how-container" style="display: none;">
         <div class="row custom-container">
           <div class="icon-box">
+            <img class="image" style="height: 424px"
+              src="<?= get_template_directory_uri() ?>/img/nft/How_it_works_Selling_your_NFT.svg" alt="">
+
           </div>
           <div class="num-box">
             <p>1.</p>
@@ -270,16 +283,18 @@ get_header();
 .nft-home-container {}
 
 .banner-container {
-  padding: 0 100px;
+  padding: 0 50px;
   height: 600px;
   display: flex;
   align-items: center;
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
 }
 
-.banner-container .content {
-  width: 655px;
+.banner-container .content {}
 
-}
+.banner-container .banner-image {}
 
 .banner-container .title {
 
@@ -310,6 +325,7 @@ get_header();
 
 .banner-container .action {
   margin-top: 60px;
+  text-align: left;
 }
 
 .banner-container .action .buy {
@@ -353,7 +369,21 @@ get_header();
   color: #05004D;
 }
 
-.slider-container {}
+.slider-container {
+  position: relative;
+}
+
+.slider-bg .top-image {
+  position: absolute;
+  top: 0;
+  left: 62%;
+}
+
+.slider-bg .bottom-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 .slider-container .container {
   max-width: calc(428px * 3);
@@ -403,11 +433,12 @@ get_header();
 }
 
 .middle-block .right {
-  border: 2px solid #C7BA9A;
+  /* border: 2px solid #C7BA9A; */
   box-sizing: border-box;
   border-radius: 10px;
   padding: 20px 10px 36px;
   width: 475px;
+  background: url("<?= get_template_directory_uri() ?>/img/nft/border.svg");
 
 
   font-style: normal;
@@ -696,6 +727,10 @@ get_header();
   margin-top: 80px;
 }
 
+.how-area .icon-box {
+  margin-left: 100px;
+}
+
 .how-area .num-box {
   /* OTC Glold */
   border: 2px solid #C7BA9A;
@@ -705,7 +740,7 @@ get_header();
   height: fit-content;
   box-sizing: border-box;
   padding: 20px 0;
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .how-area .num-box p {
@@ -785,6 +820,7 @@ get_header();
   width: 380px;
   height: 380px;
   display: block;
+  margin: 0 auto;
 }
 
 .slider-container .owl-item a .content .title {
@@ -830,7 +866,7 @@ get_header();
 
 .owl-stage {
 
-  height: 600px;
+  /* height: 600px; */
   overflow: hidden;
 }
 
@@ -861,6 +897,629 @@ get_header();
   /* VirgoOTC Blue */
 
   color: #05004D;
+}
+
+.owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 160px;
+  left: 0;
+  z-index: 1;
+  color: #05004D;
+  font-size: 28px;
+  font-weight: bolder;
+}
+
+.owl-prev,
+.owl-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  box-shadow: 0px 4px 4px rgba(171, 168, 168, 0.25);
+}
+
+.owl-prev {
+  position: absolute;
+  left: -5px;
+}
+
+.owl-next {
+  position: absolute;
+  right: -10px;
+}
+
+.owl-next:hover {
+  color: #05004D !important;
+}
+
+.owl-prev:hover {
+  color: #05004D !important;
+}
+
+@media screen and (max-width: 900px) {
+
+  .nft-home-container {}
+
+  .banner-container {
+    padding: 0 40px;
+    display: block;
+    /* align-items: center; */
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .banner-container .content {}
+
+  .banner-container .banner-image {
+    width: 90vw;
+    margin-top: 50px;
+  }
+
+  .banner-container .title {
+
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    /* or 117% */
+
+    color: #05004D;
+  }
+
+  .banner-container .title span {
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    /* or 117% */
+
+    text-transform: uppercase;
+
+    /* OTC Glold */
+
+    color: #C7BA9A;
+  }
+
+  .banner-container .action {
+    margin-top: 60px;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .banner-container .action .buy {
+    width: 160px;
+    height: 50px;
+    background: #05004D;
+    border-radius: 25px;
+
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* FFFFFF */
+
+    color: #FFFFFF;
+  }
+
+  .banner-container .action .sell {
+    width: 180px;
+    height: 50px;
+    border: 2px solid #05004D;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin-left: 20px;
+
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    /* VirgoOTC Blue */
+
+    color: #05004D;
+  }
+
+  .slider-container {
+    position: relative;
+  }
+
+  .slider-bg .top-image {
+    position: absolute;
+    top: 0;
+    left: 62%;
+  }
+
+  .slider-bg .bottom-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .slider-container .container {
+    max-width: calc(428px * 3);
+  }
+
+  .slider-container h3 {
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    margin: 80px auto;
+    /* or 139% */
+
+    text-align: center;
+    width: 100%;
+
+    color: #1E1A5F;
+  }
+
+  .middle-block {
+    width: 100%;
+    background: #05004D;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+  }
+
+  .middle-block .left {
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    width: 100%;
+    padding: 30px 22px;
+
+    /* FFFFFF */
+
+    color: #FFFFFF;
+  }
+
+  .middle-block .left span {
+    /* OTC Glold */
+
+    color: #C7BA9A;
+  }
+
+  .middle-block .right {
+    /* border: 2px solid #C7BA9A; */
+    margin-top: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 10px 10px 10px;
+    width: 96%;
+    margin: 0 auto;
+    height: 133px;
+    background: url("<?= get_template_directory_uri() ?>/img/nft/border.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 156% */
+
+    text-align: left;
+
+    /* FFFFFF */
+
+    color: #FFFFFF;
+  }
+
+  .works-container {}
+
+  .works-container h3 {
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 50px;
+    /* or 139% */
+
+    text-align: center;
+    width: 100%;
+    margin: 80px auto;
+
+    color: #1E1A5F;
+  }
+
+
+  /*tabs*/
+  .tabs {
+    display: block;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #05004D;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1em;
+    text-align: center;
+  }
+
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .tabs [class^="tab"] [type="radio"]:hover,
+  .tabs [class^="tab"] [type="radio"]:focus,
+  .tabs [class*=" tab"] [type="radio"]:hover,
+  .tabs [class*=" tab"] [type="radio"]:focus {
+    border-bottom: 1px solid #c7ba9a;
+  }
+
+  .tabs [class^="tab"] [type="radio"]:checked,
+  .tabs [class*=" tab"] [type="radio"]:checked {
+    border-bottom: 3px solid #c7ba9a;
+  }
+
+  .tabs [class^="tab"] [type="radio"]:checked+div,
+  .tabs [class*=" tab"] [type="radio"]:checked+div {
+    opacity: 1;
+  }
+
+  .tabs [class^="tab"] [type="radio"]+div,
+  .tabs [class*=" tab"] [type="radio"]+div {
+    display: block;
+    opacity: 0;
+    padding: 2rem 0;
+    width: 90%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .tabs .tab-2 {
+    width: 50%;
+  }
+
+  .tabs .tab-2 [type="radio"]+div {
+    width: 200%;
+    margin-left: 200%;
+  }
+
+  .tabs .tab-2 [type="radio"]:checked+div {
+    margin-left: 0;
+  }
+
+  .tabs .tab-2:last-child [type="radio"]+div {
+    margin-left: 100%;
+  }
+
+  .tabs .tab-2:last-child [type="radio"]:checked+div {
+    margin-left: -100%;
+  }
+
+  .tab-switch {
+    display: none;
+    margin: 0 auto;
+  }
+
+  .tab-switch a {
+    color: #84839c;
+    padding: 5px 10px;
+  }
+
+  .tab-switch a:first-child {
+    margin-right: 0px;
+  }
+
+  .tab-switch a:hover,
+  .tab-switch a.selected {
+    color: #05004D;
+    border-bottom: 3px solid #c7ba9a;
+    cursor: pointer;
+    font-family: "Matter-Bold" !important;
+  }
+
+  .how-area .getstart-btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    width: 200px;
+    height: 50px;
+    line-height: 46px;
+    margin: 20px auto;
+
+    /* VirgoOTC Blue */
+
+    border: 2px solid #05004D;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    /* VirgoOTC Blue */
+
+    color: #05004D;
+
+  }
+
+  .how-area {
+    padding-bottom: 0;
+    margin: 50px auto;
+  }
+
+  .how-area h2 {
+
+    padding-bottom: 0;
+  }
+
+  .how-area .row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+  }
+
+  .how-container .row {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 80px;
+  }
+
+  .how-area .icon-box {
+    margin-left: 20px;
+  }
+
+  .how-area .num-box {
+    display: none;
+    /* OTC Glold */
+    border: 2px solid #C7BA9A;
+    box-sizing: border-box;
+    border-radius: 30px;
+    width: 68px;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 20px 0;
+    margin-left: 100px;
+  }
+
+  .how-area .num-box p {
+    font-weight: bold;
+    font-size: 36px;
+    /* line-height: 43px; */
+    height: 60px;
+    text-align: center;
+
+    /* OTC Glold */
+
+    color: #C7BA9A;
+  }
+
+  .how-area .content-box {
+    width: 70vw;
+    margin-left: 25px;
+    padding: 10px 0;
+  }
+
+  .how-area .content-box p {
+    height: 60px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+  }
+
+
+  .signup-area h2 {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+  }
+
+  .signup-area .round-btn {
+    margin: auto;
+  }
+
+  .faq .panel-default>.panel-heading {
+    border-bottom: 1px solid black;
+    padding: 0;
+  }
+
+  .faq .panel-default .panel-title div {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #05004d;
+  }
+
+  .faq .panel-default .panel-title img {
+    color: #05004d;
+    float: right;
+    width: 20px;
+  }
+
+  .faq .panel-default .panel-body {
+    font-size: 16px;
+  }
+
+
+  .slider-container .owl-item a {
+    display: block;
+  }
+
+  .slider-container .owl-item {
+    width: 380px;
+    height: 531px;
+    /* margin: 20px; */
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #FFFFFF;
+    border-radius: 0px 0px 20px 20px;
+  }
+
+  .slider-container .owl-item a img {
+    width: 380px;
+    height: 380px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .slider-container .owl-item a .content .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 18px;
+    line-height: 29px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* VirgoOTC Blue */
+
+    color: #05004D;
+  }
+
+  .slider-container .owl-item a .content .desc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    /* VirgoOTC Blue */
+
+    color: #05004D;
+  }
+
+  .slider-container .owl-item .content .value {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* OTC Glold */
+
+    color: #C7BA9A;
+  }
+
+  .owl-stage {
+
+    /* height: 600px; */
+    overflow: hidden;
+  }
+
+  .action {
+    width: 100%;
+    text-align: center;
+  }
+
+  .view-more {
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    width: 200px;
+    height: 50px;
+    line-height: 46px;
+    margin: 20px auto;
+
+    /* VirgoOTC Blue */
+
+    border: 2px solid #05004D;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    /* VirgoOTC Blue */
+
+    color: #05004D;
+  }
+
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 160px;
+    left: 0;
+    z-index: 1;
+    color: #05004D;
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    box-shadow: 0px 4px 4px rgba(171, 168, 168, 0.25);
+  }
+
+  .owl-prev {
+    position: absolute;
+    left: -5px;
+  }
+
+  .owl-next {
+    position: absolute;
+    right: -10px;
+  }
+
+  .owl-next:hover {
+    color: #05004D !important;
+  }
+
+  .owl-prev:hover {
+    color: #05004D !important;
+  }
+
+  .custom-container h2 {
+    font-size: 24px;
+  }
+
+  .panel-group {
+    padding: 10px;
+  }
 }
 </style>
 
@@ -899,18 +1558,19 @@ get_header();
         autoplay: false,
         autoplayTimeout: 1500,
         pagination: true,
-        dots: false,
+        nav: true,
+        dots: true,
         autoplayHoverPause: true
       });
     } else {
       owl.owlCarousel({
-        items: 2,
+        items: 1,
         loop: true,
         margin: 10,
         autoplay: false,
         autoplayTimeout: 1500,
         pagination: false,
-        dots: false,
+        dots: true,
         autoplayHoverPause: true
       });
     }
